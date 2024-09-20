@@ -88,7 +88,7 @@ label {
     width: 100%;
     border-radius: 5px;
     border : 1px solid hsl(203, 41%, 72%);
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
 
     color :hsl(202, 55%, 16%);
     font-weight: 700;
@@ -106,6 +106,16 @@ label {
 .input-wrapper , .input-wrapper-right {
     position: relative;
     width: 100%;
+}
+
+.input-wrapper:focus-within::before {
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(202, 55%, 16%);
+}
+
+.input-wrapper-right:focus-within::before {
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(202, 55%, 16%);
 }
 
 .input-wrapper::before {
@@ -127,7 +137,7 @@ label {
     justify-content: center;
     align-items: center;
 
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
 }
 
 .input-wrapper-right::before {
@@ -174,8 +184,6 @@ label {
 
     cursor: pointer;
 }
-
-
 
 .checkbox-wrapper:hover {
     border-color: hsl(61, 70%, 52%);
