@@ -1,0 +1,25 @@
+.results {
+    background: hsl(202, 55%, 16%);
+    width: 100%;
+
+    border-radius: 0px 30px 30px 125px;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap : 2rem;
+}
+
+.results h2 {
+    color: white;
+    font-weight: 700;
+}
+
+.results p {
+    color : hsl(200, 24%, 40%);
+    text-align: center;
+    font-weight: 700;
+}

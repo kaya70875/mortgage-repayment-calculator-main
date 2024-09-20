@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 main{
@@ -23,15 +24,15 @@ main{
 
     border-radius: 30px;
     display: flex;
-    padding: 3rem;
 }
 
 .form-wrapper {
-    width: 60%;
+    width: 80%;
     height: 100%;
     display: flex;
     flex-direction: column;
 
+    padding: 3rem;
     gap : 2rem;
 }
 
@@ -39,7 +40,26 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 95%;
+}
+
+.form-header h1 {
+    color : hsl(202, 55%, 16%);
+    font-weight: 700;
+}
+
+.form-header a {
+    color: hsl(200, 24%, 40%);
+    font-weight: 500;
+}
+
+.form-header a:hover {
+    color: hsl(202, 55%, 16%);
+}
+
+label {
+    color: hsl(200, 24%, 40%);
+    font-weight: 500;
 }
 
 .mortgage-form {
@@ -55,33 +75,121 @@ main{
     display: flex;
     flex-direction: column;
     gap : 0.5rem;
+    width: 100%;
+}
+
+.form-section {
+    width: 100%;
+    display: flex;
+    gap : 0.5rem;
 }
 
 .form-group input {
     width: 100%;
     border-radius: 5px;
-    border: 1px solid lightgray;
-    padding: 1rem 1.5rem;
+    border : 1px solid hsl(203, 41%, 72%);
+    padding: 1rem 2rem;
+
+    color :hsl(202, 55%, 16%);
+    font-weight: 700;
 }
 
-.input-wrapper{
+.form-group input:hover {
+    border : 1px solid hsl(202, 55%, 16%);
+}
+
+.form-group input:focus {
+    outline: none;
+    border : 1px solid hsl(61, 70%, 52%);
+}
+
+.input-wrapper , .input-wrapper-right {
     position: relative;
     width: 100%;
 }
 
-.input-symbol {
+.input-wrapper::before {
+    content: attr(data-symbol);
     position: absolute;
     top: 50%;
-    left: 1px;
-    height: 95%;
-    width: 10%;
-    transform: translateY(-50%);
-    background: hsl(202, 86%, 94%);
-
+    left: 2px;
+    height: 90%;
+    min-width: 2%;
     border-radius: 5px;
-    border: 1px solid lightgray;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: hsl(202, 86%, 94%);
+    color : hsl(200, 24%, 40%);
+    pointer-events: none;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 0 0.5rem;
 }
+
+.input-wrapper-right::before {
+    content: attr(data-symbol);
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    height: 90%;
+    min-width: 2%;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: hsl(202, 86%, 94%);
+    color : hsl(200, 24%, 40%);
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 0.5rem;
+  }
+
+.frequency-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    width: 100%;
+    flex-direction: column;
+    gap : 0.5rem;
+}
+
+.checkbox-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap : 0.5rem;
+    
+    border : 1px solid hsl(203, 41%, 72%);
+    padding: 1rem 1rem;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+
+.checkbox-wrapper:hover {
+    border-color: hsl(61, 70%, 52%);
+}
+
+input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    
+}
+
+.checkbox-wrapper label {
+    font-weight: 700;
+    color : hsl(202, 55%, 16%);
+}
+  

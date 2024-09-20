@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mortgage Repayment Calculator</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="results.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <main>
@@ -13,7 +18,7 @@
           <!-- Main Form for Input Header -->
           <header class="form-header">
             <h1>Mortgage Calculator</h1>
-            <p>Clear All</p>
+            <a href="">Clear All</a>
           </header>
 
           <!-- Main Form for Inputs -->
@@ -26,69 +31,74 @@
             <!-- Loan Amount Input -->
             <div class="form-group">
               <label for="loan-amount">Mortgage Amount</label>
-              <div class="input-wrapper">
-                <span class="input-symbol">€</span>
+              <div class="input-wrapper" data-symbol="€">
                 <input
-                type="number"
-                id="loan-amount"
-                name="loan_amount"
-                required />
+                  type="number"
+                  id="loan-amount"
+                  name="loan_amount"
+                  required
+                />
+              </div>
+            </div>
+
+            <section class="form-section">
+              <!-- Interest Rate Input -->
+              <div class="form-group">
+                <label for="interest-rate">Interest Rate</label>
+                <div class="input-wrapper-right" data-symbol="%">
+                  <input
+                    id="interest-rate"
+                    name="interest_rate"
+                    required
+                  />
+                </div>
               </div>
 
-            </div>
-
-            <!-- Interest Rate Input -->
-            <div class="form-group">
-              <label for="interest-rate">Interest Rate (%)</label>
-              <input
-                type="number"
-                id="interest-rate"
-                name="interest_rate"
-                step="0.01"
-                placeholder="e.g. 3.5"
-                required
-              />
-            </div>
-
-            <!-- Loan Term Input -->
-            <div class="form-group">
-              <label for="loan-term">Loan Term (years)</label>
-              <input
-                type="number"
-                id="loan-term"
-                name="loan_term"
-                placeholder="e.g. 30"
-                required
-              />
-            </div>
+              <!-- Loan Term Input -->
+              <div class="form-group">
+                <label for="loan-term">Loan Term</label>
+                <div class="input-wrapper-right" data-symbol="years">
+                  <input
+                    id="loan-term"
+                    name="loan_term"
+                    required
+                  />
+                </div>
+              </div>
+            </section>
 
             <!-- Repayment Frequency Input -->
             <div class="form-group">
-              <label for="repayment-frequency">Repayment Frequency</label>
-              <select
-                id="repayment-frequency"
-                name="repayment_frequency"
-                required
-              >
-                <option value="monthly">Monthly</option>
-                <option value="bi-weekly">Bi-Weekly</option>
-                <option value="weekly">Weekly</option>
-              </select>
+              <label for="repayment-frequency">Mortgage Type</label>
+              <section class="frequency-wrapper">
+                <div class="checkbox-wrapper">
+                  <input type="radio" id="option1" name="options"/>
+                  <label for="option1">Repayment</label>
+
+                </div>
+                <div class="checkbox-wrapper">
+                  <input type="radio" id="option2" name="options"/>
+                  <label for="option2">Interest Only</label>
+                </div>
+              </section>
             </div>
 
             <!-- Calculate Button -->
-            <button type="submit" class="btn">Calculate</button>
+             <button class="btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
+              <p>Calculate Repayments</p>
+             </button>
           </form>
         </div>
 
         <!-- Results Section -->
         <section id="results" class="results">
-          <h2>Results</h2>
-          <p>Total Payment: <span id="total-payment">$0.00</span></p>
-          <p>Monthly Payment: <span id="monthly-payment">$0.00</span></p>
-          <p>Total Interest: <span id="total-interest">$0.00</span></p>
+          <img src="/assets/images/illustration-empty.svg" alt="">
+          <h2>Results Shown Here</h2>
+          <p>Complete the form and click "calculate payments" to see what your monthly repayments would be.</p>
         </section>
       </section>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>

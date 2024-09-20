@@ -1,0 +1,22 @@
+.btn {
+    width: 50%;
+    background: hsl(61, 70%, 52%);
+    border-radius: 30px;
+    border : none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 0.5rem;
+
+    padding: .75rem;
+
+    color : hsl(202, 55%, 16%);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: hsl(61, 70%, 42%);
+}
