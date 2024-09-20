@@ -13,6 +13,21 @@
     gap : 2rem;
 }
 
+.results-card {
+    display: none;
+    width: 100%;
+    height: 50%;
+    background: hsl(202, 55%, 12%);
+
+    border-radius: 5px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+    gap : 1.5rem;
+    padding: 3rem;
+}
+
 .results h2 {
     color: white;
     font-weight: 700;
@@ -22,4 +37,31 @@
     color : hsl(200, 24%, 40%);
     text-align: center;
     font-weight: 700;
+}
+
+.results.show > img {
+    display: none;
+}
+
+.results.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.results-card h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    color : hsl(61, 70%, 52%);
+}
+
+.results-card h3 {
+    font-weight: 700;
+    font-size: 2rem;
+    color : white;
+}
+
+.results.show p {
+    text-align: start;
 }
