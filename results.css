@@ -89,3 +89,26 @@
     width: 100%;
     border : 1px solid hsl(200, 24%, 40%);
 }
+
+@media (max-width: 848px) {
+    .results {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 552px) {
+    .results {
+        width: 100%;
+    }
+
+    .results-card h2 {
+        font-size: 2rem!important;
+        text-align: start;
+    }
+}
+
+@media (max-width: 450px) {
+    .results {
+        padding: 1.5rem;
+    }
+}

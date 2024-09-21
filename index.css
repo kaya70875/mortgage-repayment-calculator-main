@@ -16,9 +16,7 @@ main{
 }
 
 .calculator {
-    width: 65%;
-    height: 65vh;
-
+    width: 75%;
     margin : auto;;
     background: white;
 
@@ -41,6 +39,8 @@ main{
     align-items: center;
     justify-content: space-between;
     width: 95%;
+    gap : 1rem;
+    text-wrap: nowrap;
 }
 
 .form-header h1 {
@@ -200,4 +200,55 @@ input[type="radio"] {
     font-weight: 700;
     color : hsl(202, 55%, 16%);
 }
-  
+
+@media (max-width: 1254px) {
+    .calculator {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .calculator {
+        width: 95%;
+    }
+    .form-wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width: 848px) {
+    .calculator {
+        width: 95%;
+    }
+    .calculator {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 552px) {
+    .form-header {
+        flex-wrap: wrap;
+    }
+
+    .form-section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media  (max-width: 450px) {
+    .form-wrapper {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .results h2 {
+        text-align: center;
+    }
+
+    .form-header h1 {
+        text-wrap: nowrap;
+    }
+}

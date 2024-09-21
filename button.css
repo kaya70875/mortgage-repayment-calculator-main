@@ -1,5 +1,5 @@
 .btn {
-    width: 50%;
+    max-width: 70%;
     background: hsl(61, 70%, 52%);
     border-radius: 30px;
     border : none;
@@ -19,4 +19,10 @@
 
 .btn:hover {
     background: hsl(61, 70%, 42%);
+}
+
+@media (max-width: 848px) {
+    .btn {
+        max-width: 100%;
+    }
 }
