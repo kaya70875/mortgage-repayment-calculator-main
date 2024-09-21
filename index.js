@@ -19,6 +19,11 @@ document
 
         const resultsElement = document.getElementById("results");
         const resultsCard = document.getElementById("results-card");
+        const resultsHeader = document.getElementById("results-header");
+        const resultsInfo = document.getElementById("results-info");
+
+        resultsHeader.innerHTML = 'Your Results';
+        resultsInfo.innerHTML = 'Your results are shown below based on the information you provided. To adjust your results, please adjust your inputs and click the "Calculate" button again.';
         resultsElement.classList.add("show");
         resultsCard.style.display = "flex";
 
@@ -45,8 +50,8 @@ document
         const repaymentResult = document.getElementById("repayment-result");
         const repayTerm = document.getElementById("repay-term");
 
-        repaymentResult.innerHTML = monthlyPayment;
-        repayTerm.innerHTML = loanTerm;
+        repaymentResult.innerHTML = `€${monthlyPayment}`;
+        repayTerm.innerHTML = `€${loanTerm}`;
     });
 
 function calculateMortgagePayment(
