@@ -90,6 +90,12 @@
     border : 1px solid hsl(200, 24%, 40%);
 }
 
+.error-message {
+    display: none;
+    font-weight: 700;
+    color : hsl(4, 69%, 50%);
+}
+
 @media (max-width: 848px) {
     .results {
         border-radius: 0;

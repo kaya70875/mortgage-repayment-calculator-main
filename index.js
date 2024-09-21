@@ -22,21 +22,31 @@ document
         const resultsHeader = document.getElementById("results-header");
         const resultsInfo = document.getElementById("results-info");
 
+        // Get form values
+        const loanAmount = document.getElementById("loan-amount").value.trim();
+        const interestRate = document.getElementById("interest-rate").value.trim();
+        const loanTerm = document.getElementById("loan-term").value.trim();
+        const mortgageType = document.querySelector('input[name="options"]:checked');
+
+        // Handle empty inputs
+        const errorMsg = document.querySelectorAll(".error-message");
+        const formElements = document.getElementsByName("form-element");
+
+        if(!loanAmount || !interestRate || !loanTerm || !mortgageType) {
+            formElements.forEach((element , index) => {
+                if(!element.value) {
+                    errorMsg[index].style.display = "block";
+                }
+            });
+            return;
+        }
+
+        // Handle Results section parameters
+
         resultsHeader.innerHTML = 'Your Results';
         resultsInfo.innerHTML = 'Your results are shown below based on the information you provided. To adjust your results, please adjust your inputs and click the "Calculate" button again.';
         resultsElement.classList.add("show");
         resultsCard.style.display = "flex";
-
-        // Get form values
-        const loanAmount = parseFloat(document.getElementById("loan-amount").value);
-        const interestRate = parseFloat(
-            document.getElementById("interest-rate").value
-        );
-        const loanTerm = parseFloat(document.getElementById("loan-term").value);
-        const mortgageType = document.querySelector(
-            'input[name="options"]:checked'
-        ).value;
-        console.log("mortType", mortgageType);
 
         // Call function to calculate the mortgage payment
         const monthlyPayment = calculateMortgagePayment(
